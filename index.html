@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rock • Paper • Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Rock • Paper • Scissors</h1>
+      <div class="controls">
+        <label class="best-of">
+          Best of
+          <select id="bestOf">
+            <option value="1">1</option>
+            <option value="3" selected>3</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+          </select>
+        </label>
+        <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" class="btn" target="_blank" rel="noopener">Rules</a>
+        <button id="resetBtn" class="btn secondary" aria-label="Reset game">Reset</button>
+      </div>
+    </header>
+
+    <section class="scoreboard" aria-live="polite">
+      <div class="score">
+        <span class="label">You</span>
+        <span id="playerScore" class="value">0</span>
+      </div>
+      <div class="score">
+        <span class="label">CPU</span>
+        <span id="cpuScore" class="value">0</span>
+      </div>
+      <div class="rounds">
+        <span class="label">Round</span>
+        <span id="roundNumber" class="value">1</span>
+      </div>
+    </section>
+
+    <section class="arena">
+      <div class="choices" role="group" aria-label="Your choice">
+        <button class="choice" data-choice="rock" aria-label="Rock">🪨<span>Rock</span></button>
+        <button class="choice" data-choice="paper" aria-label="Paper">📄<span>Paper</span></button>
+        <button class="choice" data-choice="scissors" aria-label="Scissors">✂️<span>Scissors</span></button>
+      </div>
+      <div id="result" class="result" aria-live="polite">Make your move!</div>
+      <div class="last-picks">
+        <div>You: <span id="playerPick">—</span></div>
+        <div>CPU: <span id="cpuPick">—</span></div>
+      </div>
+    </section>
+
+    <section class="history">
+      <h2>Round History</h2>
+      <ol id="historyList" class="history-list"></ol>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
+
